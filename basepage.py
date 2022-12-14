@@ -32,6 +32,9 @@ class BasePage(object):
 
     def find(self, locator):
         return self.driver.find_element(*locator)
+    
+    def find_many(self, locator):
+        return self.driver.find_elements(*locator)
 
     def find_element(self, locator):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
